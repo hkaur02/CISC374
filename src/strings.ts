@@ -4,7 +4,12 @@
  * string unchanged.
  */
 export function notString(str: string): string {
-    return "";
+    let hasNot = str.startsWith("not");
+    if(hasNot=true){
+        return str;
+    }
+    else
+        return "not"+str;
 }
 
 /**
@@ -13,7 +18,7 @@ export function notString(str: string): string {
  * length 1 or more.
  */
 export function backAround(str: string): string {
-    return "";
+    return str.substring(str.length-1) + str + str.substring(str.length-1);
 }
 
 /**

@@ -21,6 +21,40 @@
  *          Returns whether the account is empty (i.e., at zero).
  *
  */
+interface BankAccount{
+    amount: number;
+    name: string;
+}
+
+class BankAccount implements BankAccount{
+    amount: number;
+    name: string;
+
+    constructor(amount: number, name: string){
+        this.amount = amount;
+        this.name = name;
+    }
+
+deposit(added_amount: number): number{
+    return this.amount + added_amount;
+}
+
+withdraw(amount_requested: number): number{
+    if(this.amount >= amount_requested){
+        return this.amount - amount_requested;
+    }
+    else{
+        return this.amount;
+    }
+}
+
+isEmpty(): boolean{
+    if(this.amount = 0){
+        return true;
+    }
+    return false;
+}
+}
 
 /**
  * (2) Make 3 sample bank accounts and demonstrate withdrawing and depositing money into them.

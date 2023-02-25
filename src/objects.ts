@@ -7,7 +7,9 @@
  */
 
 export function mapShare(someMap): object {
-    return {};
+    someMap.set("b", someMap.get("a"));
+    someMap.delete("c");
+    return someMap;
 }
 
 /**

@@ -4,7 +4,11 @@
  * an empty list.
  */
 export function makeEnds(nums: Array<number>): Array<number> {
-    return [];
+    if(nums.length>=2){
+        return [nums[0], nums[nums.length-1]]
+    }else{
+        return [];
+    }
 }
 
 /**
@@ -13,7 +17,9 @@ export function makeEnds(nums: Array<number>): Array<number> {
  * positions in the array.
  */
 export function unlucky1(nums: Array<number>): boolean {
-    return false;
+    if(nums[0]== 1 && nums[1]== 3||nums[nums.length-1] == 1||nums[nums.length-2] == 3)
+        return true;
+    else return false;
 }
 
 /**
